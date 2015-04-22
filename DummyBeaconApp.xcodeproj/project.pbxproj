@@ -414,6 +414,7 @@
 				5EEDA4E01AE81699003EC5CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EEDA4E11AE81699003EC5CA /* Build configuration list for PBXNativeTarget "DummyBeaconAppTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +423,7 @@
 				5EEDA4E31AE81699003EC5CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

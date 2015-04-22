@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="awS-KF-2r5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Dummy iBeacon App-->
@@ -29,7 +30,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="9lq-U5-PDw" kind="show" id="MPq-ip-LlH"/>
+                                            <segue destination="omb-Qv-my9" kind="show" id="MPq-ip-LlH"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" textLabel="rMU-AL-iMi" style="IBUITableViewCellStyleDefault" id="a63-G6-32Z">
@@ -63,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="1449" y="203"/>
         </scene>
-        <!--View Controller-->
+        <!--3 iBeacon-->
         <scene sceneID="eWN-Cj-zy2">
             <objects>
                 <viewController id="9lq-U5-PDw" sceneMemberID="viewController">
@@ -74,12 +75,102 @@
                     <view key="view" contentMode="scaleToFill" id="Dry-nO-Q46">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3Beacons" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-rc-oCv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7hh-rc-oCv" firstAttribute="top" secondItem="Dry-nO-Q46" secondAttribute="topMargin" id="2je-mF-iDi"/>
+                            <constraint firstItem="7hh-rc-oCv" firstAttribute="leading" secondItem="Dry-nO-Q46" secondAttribute="leadingMargin" id="4Ic-kv-Ote"/>
+                            <constraint firstAttribute="centerY" secondItem="7hh-rc-oCv" secondAttribute="centerY" id="YUp-gL-Hrk"/>
+                            <constraint firstItem="7hh-rc-oCv" firstAttribute="bottom" secondItem="Dry-nO-Q46" secondAttribute="bottomMargin" id="kqr-MB-2Dz"/>
+                            <constraint firstAttribute="centerX" secondItem="7hh-rc-oCv" secondAttribute="centerX" id="oWC-Pv-wV7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7hh-rc-oCv" secondAttribute="trailing" id="rD7-0z-Vtc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2je-mF-iDi"/>
+                                <exclude reference="4Ic-kv-Ote"/>
+                                <exclude reference="YUp-gL-Hrk"/>
+                                <exclude reference="kqr-MB-2Dz"/>
+                                <exclude reference="oWC-Pv-wV7"/>
+                                <exclude reference="rD7-0z-Vtc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="2je-mF-iDi"/>
+                                <include reference="4Ic-kv-Ote"/>
+                                <include reference="YUp-gL-Hrk"/>
+                                <include reference="kqr-MB-2Dz"/>
+                                <include reference="oWC-Pv-wV7"/>
+                                <include reference="rD7-0z-Vtc"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="3 iBeacon" id="eBp-4s-fWL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbx-rR-HPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="-318"/>
+            <point key="canvasLocation" x="3150" y="-774"/>
+        </scene>
+        <!--4 iBeacon-->
+        <scene sceneID="RY9-HH-wnI">
+            <objects>
+                <viewController id="p4D-LX-1BA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7c3-0L-V1a"/>
+                        <viewControllerLayoutGuide type="bottom" id="lLz-wg-8Yb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kmW-4d-gjx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4Beacons" translatesAutoresizingMaskIntoConstraints="NO" id="VjF-xK-Lds">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="VjF-xK-Lds" secondAttribute="centerX" id="Cxs-Pr-PuQ"/>
+                            <constraint firstAttribute="centerY" secondItem="VjF-xK-Lds" secondAttribute="centerY" id="aXu-XZ-6zE"/>
+                            <constraint firstItem="VjF-xK-Lds" firstAttribute="bottom" secondItem="kmW-4d-gjx" secondAttribute="bottomMargin" id="cPa-sa-7mW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VjF-xK-Lds" secondAttribute="trailing" id="f4g-1b-60x">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="VjF-xK-Lds" firstAttribute="top" secondItem="kmW-4d-gjx" secondAttribute="topMargin" id="iru-jj-6GY"/>
+                            <constraint firstItem="VjF-xK-Lds" firstAttribute="leading" secondItem="kmW-4d-gjx" secondAttribute="leadingMargin" id="xgj-rL-Fe8">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Cxs-Pr-PuQ"/>
+                                <exclude reference="aXu-XZ-6zE"/>
+                                <exclude reference="cPa-sa-7mW"/>
+                                <exclude reference="f4g-1b-60x"/>
+                                <exclude reference="iru-jj-6GY"/>
+                                <exclude reference="xgj-rL-Fe8"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Cxs-Pr-PuQ"/>
+                                <include reference="aXu-XZ-6zE"/>
+                                <include reference="cPa-sa-7mW"/>
+                                <include reference="f4g-1b-60x"/>
+                                <include reference="iru-jj-6GY"/>
+                                <include reference="xgj-rL-Fe8"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="4 iBeacon" id="AGc-WX-Zou"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJj-Nj-Qfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3150" y="24"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7nD-zq-DwH">
@@ -117,5 +208,28 @@
             </objects>
             <point key="canvasLocation" x="637" y="203"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="lT9-Ao-Nuz">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="omb-Qv-my9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="UYD-mZ-ObM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9lq-U5-PDw" kind="relationship" relationship="viewControllers" id="J8F-eJ-06L"/>
+                        <segue destination="p4D-LX-1BA" kind="relationship" relationship="viewControllers" id="TUT-lV-jC9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QUL-EU-op5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2289" y="-318"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="3Beacons" width="288" height="288"/>
+        <image name="4Beacons" width="288" height="288"/>
+    </resources>
 </document>

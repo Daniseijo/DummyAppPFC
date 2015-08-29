@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Range View Controller-->
         <scene sceneID="Mym-6e-fcA">
             <objects>
-                <viewController id="D7V-pH-cCh" sceneMemberID="viewController">
+                <viewController id="D7V-pH-cCh" customClass="RangeViewController" customModule="DummyBeaconApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1uF-ev-cvh"/>
                         <viewControllerLayoutGuide type="bottom" id="AYj-o3-80h"/>

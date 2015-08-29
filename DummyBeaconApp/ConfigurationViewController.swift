@@ -2,8 +2,8 @@
 //  ConfigurationViewController.swift
 //  DummyBeaconApp
 //
-//  Created by Daniel Sánchez Seijo on 25/4/15.
-//  Copyright (c) 2015 Daniel Sánchez Seijo. All rights reserved.
+//  Created by Daniel Seijo Sánchez on 25/4/15.
+//  Copyright (c) 2015 Daniel Seijo Sánchez. All rights reserved.
 //
 
 import UIKit

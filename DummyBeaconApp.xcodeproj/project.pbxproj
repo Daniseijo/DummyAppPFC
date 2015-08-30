@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5E51268A1B921F0800779D4B /* RangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5126891B921F0800779D4B /* RangeViewController.swift */; };
+		5E51268C1B9303D800779D4B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51268B1B9303D800779D4B /* Model.swift */; };
+		5E5126941B93460D00779D4B /* ProxRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5126931B93460D00779D4B /* ProxRangeView.swift */; };
 		5E611ABD1AEC023500D25EF0 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E611ABC1AEC023500D25EF0 /* ConfigurationViewController.swift */; };
 		5EEDA4C51AE81699003EC5CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA4C41AE81699003EC5CA /* AppDelegate.swift */; };
 		5EEDA4CA1AE81699003EC5CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EEDA4C81AE81699003EC5CA /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		5E5126891B921F0800779D4B /* RangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeViewController.swift; sourceTree = "<group>"; };
+		5E51268B1B9303D800779D4B /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
+		5E5126931B93460D00779D4B /* ProxRangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProxRangeView.swift; path = View/ProxRangeView.swift; sourceTree = "<group>"; };
 		5E611ABC1AEC023500D25EF0 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		5EEDA4BF1AE81699003EC5CA /* DummyBeaconApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DummyBeaconApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EEDA4C31AE81699003EC5CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +62,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E51268D1B9303E300779D4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E51268B1B9303D800779D4B /* Model.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5E5126921B93456400779D4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E5126931B93460D00779D4B /* ProxRangeView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		5EEDA4B61AE81699003EC5CA = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +103,8 @@
 				5EEDA4C81AE81699003EC5CA /* Main.storyboard */,
 				5E5126891B921F0800779D4B /* RangeViewController.swift */,
 				5E611ABC1AEC023500D25EF0 /* ConfigurationViewController.swift */,
+				5E5126921B93456400779D4B /* View */,
+				5E51268D1B9303E300779D4B /* Model */,
 				5EEDA4CB1AE81699003EC5CA /* Images.xcassets */,
 				5EEDA4CD1AE81699003EC5CA /* LaunchScreen.xib */,
 				5EEDA4C21AE81699003EC5CA /* Supporting Files */,
@@ -219,6 +241,8 @@
 				5EEDA4C51AE81699003EC5CA /* AppDelegate.swift in Sources */,
 				5E611ABD1AEC023500D25EF0 /* ConfigurationViewController.swift in Sources */,
 				5E51268A1B921F0800779D4B /* RangeViewController.swift in Sources */,
+				5E51268C1B9303D800779D4B /* Model.swift in Sources */,
+				5E5126941B93460D00779D4B /* ProxRangeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

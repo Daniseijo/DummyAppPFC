@@ -17,23 +17,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pointer" translatesAutoresizingMaskIntoConstraints="NO" id="zZp-12-pou">
-                                <rect key="frame" x="291" y="291" width="18" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proximity: Inmediate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKY-ro-iGW">
+                                <rect key="frame" x="16" y="493" width="568" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="18" id="SwY-mm-rRR"/>
-                                    <constraint firstAttribute="height" constant="18" id="Z52-52-YPL"/>
+                                    <constraint firstAttribute="height" constant="21" id="NpT-YH-xtZ"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: 1.34 meters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAv-4O-UzL">
+                                <rect key="frame" x="16" y="522" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zZp-12-pou" secondAttribute="centerX" id="CL1-bX-Aky"/>
-                            <constraint firstAttribute="centerY" secondItem="zZp-12-pou" secondAttribute="centerY" id="G2q-hj-ipc"/>
+                            <constraint firstItem="EKY-ro-iGW" firstAttribute="leading" secondItem="zn0-As-LAr" secondAttribute="leadingMargin" id="58g-iu-j8x"/>
+                            <constraint firstItem="qAv-4O-UzL" firstAttribute="leading" secondItem="zn0-As-LAr" secondAttribute="leadingMargin" id="7Fd-gh-kog"/>
+                            <constraint firstItem="qAv-4O-UzL" firstAttribute="trailing" secondItem="zn0-As-LAr" secondAttribute="trailingMargin" id="7gV-dm-ErA"/>
+                            <constraint firstItem="qAv-4O-UzL" firstAttribute="top" secondItem="EKY-ro-iGW" secondAttribute="bottom" constant="8" id="UIe-U3-dNV"/>
+                            <constraint firstItem="EKY-ro-iGW" firstAttribute="trailing" secondItem="zn0-As-LAr" secondAttribute="trailingMargin" id="We7-vw-g8v"/>
+                            <constraint firstItem="AYj-o3-80h" firstAttribute="top" secondItem="qAv-4O-UzL" secondAttribute="bottom" constant="8" id="uRj-eu-LaL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="HIO-m4-LFu"/>
                     <connections>
-                        <outlet property="proximityImage" destination="zZp-12-pou" id="tig-Ts-yhf"/>
+                        <outlet property="distanceLabel" destination="qAv-4O-UzL" id="e8G-Qg-mSu"/>
+                        <outlet property="proximityLabel" destination="EKY-ro-iGW" id="LXw-az-vKy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2j-Bv-ySJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -644,7 +657,6 @@
         <image name="4Beacons" width="288" height="288"/>
         <image name="4Normal" width="25" height="25"/>
         <image name="4Push" width="25" height="25"/>
-        <image name="Pointer" width="64" height="64"/>
         <image name="beaconButton" width="60" height="60"/>
     </resources>
 </document>

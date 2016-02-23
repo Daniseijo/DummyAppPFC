@@ -3,7 +3,7 @@
 //  DummyBeaconApp
 //
 //  Created by Daniel Seijo Sánchez on 30/8/15.
-//  Copyright (c) 2015 Daniel Seijo Sánchez. All rights reserved.
+//  Copyright © 2015 Daniel Seijo Sánchez. All rights reserved.
 //
 
 import UIKit
@@ -41,5 +41,4 @@ class ProxRangeView: UIView {
         CGContextStrokePath(context);
     }
     
-
 }

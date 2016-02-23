@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5EEDA4BE1AE81699003EC5CA"
+               BlueprintIdentifier = "5E7D7ACA1C7CE2C30002A562"
                BuildableName = "DummyBeaconApp.app"
                BlueprintName = "DummyBeaconApp"
-               ReferencedContainer = "container:DummyBeaconApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5EEDA4D31AE81699003EC5CA"
-               BuildableName = "DummyBeaconAppTests.xctest"
-               BlueprintName = "DummyBeaconAppTests"
                ReferencedContainer = "container:DummyBeaconApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5EEDA4D31AE81699003EC5CA"
+               BlueprintIdentifier = "5E7D7ADE1C7CE2C30002A562"
                BuildableName = "DummyBeaconAppTests.xctest"
                BlueprintName = "DummyBeaconAppTests"
+               ReferencedContainer = "container:DummyBeaconApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5E7D7AE91C7CE2C30002A562"
+               BuildableName = "DummyBeaconAppUITests.xctest"
+               BlueprintName = "DummyBeaconAppUITests"
                ReferencedContainer = "container:DummyBeaconApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EEDA4BE1AE81699003EC5CA"
+            BlueprintIdentifier = "5E7D7ACA1C7CE2C30002A562"
             BuildableName = "DummyBeaconApp.app"
             BlueprintName = "DummyBeaconApp"
             ReferencedContainer = "container:DummyBeaconApp.xcodeproj">
@@ -79,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EEDA4BE1AE81699003EC5CA"
+            BlueprintIdentifier = "5E7D7ACA1C7CE2C30002A562"
             BuildableName = "DummyBeaconApp.app"
             BlueprintName = "DummyBeaconApp"
             ReferencedContainer = "container:DummyBeaconApp.xcodeproj">
@@ -98,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EEDA4BE1AE81699003EC5CA"
+            BlueprintIdentifier = "5E7D7ACA1C7CE2C30002A562"
             BuildableName = "DummyBeaconApp.app"
             BlueprintName = "DummyBeaconApp"
             ReferencedContainer = "container:DummyBeaconApp.xcodeproj">

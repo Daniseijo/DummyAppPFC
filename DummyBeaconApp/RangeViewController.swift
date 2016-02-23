@@ -3,7 +3,7 @@
 //  DummyBeaconApp
 //
 //  Created by Daniel Seijo Sánchez on 29/8/15.
-//  Copyright (c) 2015 Daniel Seijo Sánchez. All rights reserved.
+//  Copyright © 2015 Daniel Seijo Sánchez. All rights reserved.
 //
 
 import UIKit
@@ -26,7 +26,7 @@ class RangeViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         locationManager.delegate = self;
         
@@ -36,7 +36,7 @@ class RangeViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startRangingBeaconsInRegion(region);
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,11 +58,11 @@ class RangeViewController: UIViewController, CLLocationManagerDelegate {
             let distance = -(closestBeacon.accuracy.distanceTo(0.0));
             let proximity = closestBeacon.proximity;
             
-            let newHeight = model.meters2Point(
+            let newHeight = CGFloat(model.meters2Point(
                 distance,
                 withMaxMeters: 10.0,
-                inRangeMin: navBarHeight,
-                andMax: totalHeight);
+                inRangeMin: Float(navBarHeight),
+                andMax: Float(totalHeight)));
             
             addProxCircle(newHeight, andDiameter: 20)
             self.proximityLabel.text = "Proximity: " + CLProximity2String(proximity);
@@ -103,25 +103,25 @@ class RangeViewController: UIViewController, CLLocationManagerDelegate {
     
     func CLProximity2String(proximity: CLProximity) -> String {
         switch proximity {
-            case .Far:
-                return "Far";
-            case .Immediate:
-                return "Inmediate";
-            case .Near:
-                return "Near";
-            case .Unknown:
-                return "Unknown";
+        case .Far:
+            return "Far";
+        case .Immediate:
+            return "Inmediate";
+        case .Near:
+            return "Near";
+        case .Unknown:
+            return "Unknown";
         }
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

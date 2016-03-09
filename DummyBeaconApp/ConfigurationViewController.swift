@@ -10,6 +10,8 @@ import UIKit
 
 class ConfigurationViewController: UIViewController {
     
+    @IBOutlet weak var infoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,13 +23,30 @@ class ConfigurationViewController: UIViewController {
     }
     
     
+    @IBAction func chooseA(sender: AnyObject) {
+        infoLabel.text = "Hola Mamá"
+    }
+    
+    @IBAction func chooseB(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func chooseC(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func chooseD(sender: AnyObject) {
+        
+    }
+    
     /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
     

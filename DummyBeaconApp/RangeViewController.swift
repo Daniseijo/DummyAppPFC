@@ -13,7 +13,7 @@ class RangeViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let model = Model()
-    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0")!, identifier: "Estimotes");
+    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "AE4E2401-5DEB-4F8D-901C-86932A63ABF2")!, identifier: "BeaconA");
     let colors = [
         CLProximity.Immediate: UIColor(red: 84/255, green: 77/255, blue: 160/255, alpha: 1),
         CLProximity.Near: UIColor(red: 142/255, green: 212/255, blue: 220/255, alpha: 1),

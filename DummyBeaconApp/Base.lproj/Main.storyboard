@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gFi-he-evD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gFi-he-evD">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -68,11 +68,6 @@
                     <view key="view" contentMode="scaleToFill" id="Dry-nO-Q46">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3Beacons" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-rc-oCv">
-                                <rect key="frame" x="124" y="123" width="353" height="353"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="3 iBeacons" image="3Normal" id="eBp-4s-fWL">
@@ -83,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbx-rR-HPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3073" y="-656"/>
+            <point key="canvasLocation" x="3073" y="-734"/>
         </scene>
         <!--4 iBeacons-->
         <scene sceneID="RY9-HH-wnI">
@@ -96,11 +91,6 @@
                     <view key="view" contentMode="scaleToFill" id="kmW-4d-gjx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4Beacons" translatesAutoresizingMaskIntoConstraints="NO" id="VjF-xK-Lds">
-                                <rect key="frame" x="101" y="101" width="398" height="398"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="4 iBeacons" image="4Normal" id="AGc-WX-Zou">
@@ -111,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJj-Nj-Qfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3962" y="24"/>
+            <point key="canvasLocation" x="3073" y="40"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Fdx-aR-gjo">
@@ -387,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cze-bc-UTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2199" y="1342"/>
+            <point key="canvasLocation" x="2273" y="862"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lT9-Ao-Nuz">
@@ -407,7 +397,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUL-EU-op5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="-318"/>
+            <point key="canvasLocation" x="2273" y="-734"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TzW-8U-HtE">
@@ -429,10 +419,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3Beacons" width="288" height="288"/>
         <image name="3Normal" width="29" height="25"/>
         <image name="3Push" width="29" height="25"/>
-        <image name="4Beacons" width="288" height="288"/>
         <image name="4Normal" width="25" height="25"/>
         <image name="4Push" width="25" height="25"/>
         <image name="beaconButton" width="60" height="60"/>

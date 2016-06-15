@@ -15,7 +15,7 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
     @IBOutlet weak var infoLabel: UILabel!
     
     var name:String!
-    var uuid:String!
+    let uuid:String = "AE4E2401-5DEB-4F8D-901C-86932A63ABF2"
     var major:CLBeaconMajorValue!
     var minor:CLBeaconMinorValue!
     
@@ -34,10 +34,8 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func chooseA(sender: UIButton) {
         name = "BeaconA"
-        uuid = "AE4E2401-5DEB-4F8D-901C-86932A63ABF2"
         major = 1
         minor = 1
         activateBeacon()
@@ -45,25 +43,22 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
     
     @IBAction func chooseB(sender: UIButton) {
         name = "BeaconB"
-        uuid = "FF47C188-D2DF-46A7-80E9-80A8D0A67136"
         major = 1
-        minor = 1
+        minor = 2
         activateBeacon()
     }
     
     @IBAction func chooseC(sender: UIButton) {
         name = "BeaconC"
-        uuid = "12BD4C44-D731-4474-AA16-7945C29A582D"
         major = 1
-        minor = 1
+        minor = 3
         activateBeacon()
     }
     
     @IBAction func chooseD(sender: UIButton) {
         name = "BeaconD"
-        uuid = "3F9B3CDB-6CB1-4A91-BF36-D3DFE25C6D11"
         major = 1
-        minor = 1
+        minor = 4
         activateBeacon()
     }
     
@@ -95,7 +90,6 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
             peripheralManager.stopAdvertising()
         }
     }
-
     
     /*
     // MARK: - Navigation

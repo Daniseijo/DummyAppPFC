@@ -41,6 +41,7 @@ class RangeViewController: UIViewController {
     }
     
     // MARK: - Additional Methods
+    
     func addProxCircle (withHeight: CGFloat, andDiameter: CGFloat) {
         // Sumamos 10 al diametro, que luego se restará en la vista, porque si no, se ve el borde del círculo al pintarlo
         let diametro = andDiameter + 10;
@@ -88,8 +89,12 @@ extension RangeViewController: CLLocationManagerDelegate {
         
         if (knownBeacons.count > 0) {
             let totalHeight = self.view.frame.size.height - self.tabBarController!.tabBar.frame.size.height;
-            let navBarHeight = self.navigationController!.navigationBar.frame.size.height + 20; // 20 es del status bar
-            
+            var navBarHeight:CGFloat = 0
+            if let navController = self.navigationController {
+                 navBarHeight = navController.navigationBar.frame.size.height + 20; // 20 es del status bar
+            } else {
+                navBarHeight = 20
+            }
             let closestBeacon = knownBeacons[0] ;
             let distance = -(closestBeacon.accuracy.distanceTo(0.0));
             let proximity = closestBeacon.proximity;

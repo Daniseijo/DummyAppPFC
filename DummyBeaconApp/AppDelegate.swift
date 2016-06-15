@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    let locationManager = CLLocationManager()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let notificationType:UIUserNotificationType = [.Alert, .Sound]
+        let notificationSetting = UIUserNotificationSettings(forTypes: notificationType, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSetting)
+        locationManager.delegate = self
         return true
     }
     
@@ -40,4 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+}
+
+extension AppDelegate: CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+        if let beaconRegion = region as? CLBeaconRegion {
+            let notification = UILocalNotification()
+            notification.alertBody = "Enter region"
+            notification.soundName = "Default"
+            
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
+    }
 }

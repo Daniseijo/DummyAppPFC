@@ -15,7 +15,7 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
     @IBOutlet weak var infoLabel: UILabel!
     
     var name:String!
-    let uuid:String = "AE4E2401-5DEB-4F8D-901C-86932A63ABF2"
+    let uuid:String = "0018B4CC-1937-4981-B893-9D7191B22E35"
     var major:CLBeaconMajorValue!
     var minor:CLBeaconMinorValue!
     
@@ -36,7 +36,7 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
     
     @IBAction func chooseA(sender: UIButton) {
         name = "BeaconA"
-        major = 1
+        major = 2
         minor = 1
         activateBeacon()
     }
@@ -44,7 +44,7 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
     @IBAction func chooseB(sender: UIButton) {
         name = "BeaconB"
         major = 1
-        minor = 2
+        minor = 1
         activateBeacon()
     }
     

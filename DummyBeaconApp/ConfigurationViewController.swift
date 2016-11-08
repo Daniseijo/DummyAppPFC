@@ -34,28 +34,28 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func chooseA(sender: UIButton) {
+    @IBAction func chooseA(_ sender: UIButton) {
         name = "BeaconA"
         major = 2
         minor = 1
         activateBeacon()
     }
     
-    @IBAction func chooseB(sender: UIButton) {
+    @IBAction func chooseB(_ sender: UIButton) {
         name = "BeaconB"
         major = 1
         minor = 1
         activateBeacon()
     }
     
-    @IBAction func chooseC(sender: UIButton) {
+    @IBAction func chooseC(_ sender: UIButton) {
         name = "BeaconC"
         major = 1
         minor = 3
         activateBeacon()
     }
     
-    @IBAction func chooseD(sender: UIButton) {
+    @IBAction func chooseD(_ sender: UIButton) {
         name = "BeaconD"
         major = 1
         minor = 4
@@ -63,16 +63,16 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
     }
     
     func activateBeacon() {
-        infoLabel.text = "UUID: \(uuid) | Major: \(major) | Minor: \(minor)"
+        infoLabel.text = "UUID: \(uuid) | Major: \(major!) | Minor: \(minor!)"
         
-        if region != nil {
+        if peripheralManager != nil {
             stopLocalBeacon()
         }
         
-        let uuidConverted = NSUUID(UUIDString: uuid)!
+        let uuidConverted = UUID(uuidString: uuid)!
         region = CLBeaconRegion(proximityUUID: uuidConverted, major: major, minor: minor, identifier: name)
         
-        peripheralData = region.peripheralDataWithMeasuredPower(nil)
+        peripheralData = region.peripheralData(withMeasuredPower: power)
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
     }
     
@@ -83,23 +83,11 @@ class ConfigurationViewController: UIViewController, CBPeripheralManagerDelegate
         region = nil
     }
     
-    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
-        if peripheral.state == .PoweredOn {
+    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+        if peripheral.state == .poweredOn {
             peripheralManager.startAdvertising(peripheralData as! [String: AnyObject]!)
-        } else if peripheral.state == .PoweredOff {
+        } else if peripheral.state == .poweredOff {
             peripheralManager.stopAdvertising()
         }
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

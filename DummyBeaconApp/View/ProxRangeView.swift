@@ -12,7 +12,7 @@ class ProxRangeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -21,24 +21,30 @@ class ProxRangeView: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Get the Graphics Context
         let context = UIGraphicsGetCurrentContext();
         
         // Set the circle outerline-width
-        CGContextSetLineWidth(context, 1.0);
+        context?.setLineWidth(1.0);
         
         // Set the circle colors
-        UIColor.redColor().setStroke()
-        UIColor.blueColor().setFill()
+        color.setStroke()
+        color.setFill()
         
         // Create Circle
-        CGContextAddArc(context, frame.size.width / 2, frame.size.height / 2, (frame.size.width - 10) / 2, 0.0, CGFloat(M_PI * 2.0), 1)
+        let center = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        context?.addArc(center: center, radius: (frame.size.width - 10) / 2, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
         // Fill circle with color
-        CGContextDrawPath(context, CGPathDrawingMode.Fill);
+        context?.drawPath(using: CGPathDrawingMode.fill);
         
         // Draw
-        CGContextStrokePath(context);
+        context?.strokePath();
     }
     
+    var color = UIColor.blue {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
 }

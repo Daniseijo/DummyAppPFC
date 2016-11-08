@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E48B76F1DD21C2E0062674E /* ThreeBeaconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E48B76E1DD21C2E0062674E /* ThreeBeaconsViewController.swift */; };
 		5E7D7ACF1C7CE2C30002A562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D7ACE1C7CE2C30002A562 /* AppDelegate.swift */; };
 		5E7D7AD41C7CE2C30002A562 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E7D7AD21C7CE2C30002A562 /* Main.storyboard */; };
 		5E7D7AD61C7CE2C30002A562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E7D7AD51C7CE2C30002A562 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E48B76E1DD21C2E0062674E /* ThreeBeaconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeBeaconsViewController.swift; sourceTree = "<group>"; };
 		5E7D7ACB1C7CE2C30002A562 /* DummyBeaconApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DummyBeaconApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E7D7ACE1C7CE2C30002A562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E7D7AD31C7CE2C30002A562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				5E7D7B001C7CE40A0002A562 /* Model */,
 				5E7D7B031C7CE5A60002A562 /* View */,
 				5E7D7AFC1C7CE38E0002A562 /* RangeViewController.swift */,
+				5E48B76E1DD21C2E0062674E /* ThreeBeaconsViewController.swift */,
 				5E7D7B081C7CE6FA0002A562 /* ConfigurationViewController.swift */,
 				5E7D7ACE1C7CE2C30002A562 /* AppDelegate.swift */,
 				5E7D7AD21C7CE2C30002A562 /* Main.storyboard */,
@@ -213,19 +216,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Daniel Seijo Sánchez";
 				TargetAttributes = {
 					5E7D7ACA1C7CE2C30002A562 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 3DKTSA35Z6;
+						LastSwiftMigration = 0800;
 					};
 					5E7D7ADE1C7CE2C30002A562 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5E7D7ACA1C7CE2C30002A562;
 					};
 					5E7D7AE91C7CE2C30002A562 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5E7D7ACA1C7CE2C30002A562;
 					};
 				};
@@ -286,6 +292,7 @@
 				5E7D7ACF1C7CE2C30002A562 /* AppDelegate.swift in Sources */,
 				5E7D7AFD1C7CE38E0002A562 /* RangeViewController.swift in Sources */,
 				5E7D7B071C7CE60C0002A562 /* ProxRangeView.swift in Sources */,
+				5E48B76F1DD21C2E0062674E /* ThreeBeaconsViewController.swift in Sources */,
 				5E7D7B091C7CE6FA0002A562 /* ConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,8 +361,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -398,8 +407,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -418,6 +429,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -432,6 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.DummyBeaconApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -445,6 +458,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.DummyBeaconApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -456,6 +470,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.DummyBeaconAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DummyBeaconApp.app/DummyBeaconApp";
 			};
 			name = Debug;
@@ -468,6 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.DummyBeaconAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DummyBeaconApp.app/DummyBeaconApp";
 			};
 			name = Release;
@@ -479,6 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.DummyBeaconAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DummyBeaconApp;
 				USES_XCTRUNNER = YES;
 			};
@@ -491,6 +508,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.DummyBeaconAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DummyBeaconApp;
 				USES_XCTRUNNER = YES;
 			};

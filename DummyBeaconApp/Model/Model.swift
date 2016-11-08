@@ -10,7 +10,7 @@ import Foundation
 
 class Model {
     
-    func meters2Point (meters: Double, withMaxMeters: Double, inRangeMin: Float, andMax: Float) -> Float {
+    func meters2Point (_ meters: Double, withMaxMeters: Double, inRangeMin: Float, andMax: Float) -> Float {
         let totalPoints = ((Float(meters) * (andMax - inRangeMin)) / Float(withMaxMeters));
         return inRangeMin + totalPoints;
     }

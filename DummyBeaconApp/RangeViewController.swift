@@ -13,11 +13,11 @@ class RangeViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let model = Model()
-    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "AE4E2401-5DEB-4F8D-901C-86932A63ABF2")!, identifier: "BeaconA");
+    let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "0018B4CC-1937-4981-B893-9D7191B22E35")!, identifier: "BeaconA");
     let colors = [
-        CLProximity.Immediate: UIColor(red: 84/255, green: 77/255, blue: 160/255, alpha: 1),
-        CLProximity.Near: UIColor(red: 142/255, green: 212/255, blue: 220/255, alpha: 1),
-        CLProximity.Far: UIColor(red: 162/255, green: 213/255, blue: 181/255, alpha: 1)];
+        CLProximity.immediate: UIColor(red: 84/255, green: 77/255, blue: 160/255, alpha: 1),
+        CLProximity.near: UIColor(red: 142/255, green: 212/255, blue: 220/255, alpha: 1),
+        CLProximity.far: UIColor(red: 162/255, green: 213/255, blue: 181/255, alpha: 1)];
     let TAG_NUMBER_CIRCLES = 53456
     
     @IBOutlet weak var proximityLabel: UILabel!
@@ -28,11 +28,11 @@ class RangeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         locationManager.delegate = self;
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization();
         }
         
-        locationManager.startRangingBeaconsInRegion(region);
+        locationManager.startRangingBeacons(in: region);
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,7 +42,7 @@ class RangeViewController: UIViewController {
     
     // MARK: - Additional Methods
     
-    func addProxCircle (withHeight: CGFloat, andDiameter: CGFloat) {
+    func addProxCircle (_ withHeight: CGFloat, andDiameter: CGFloat) {
         // Sumamos 10 al diametro, que luego se restará en la vista, porque si no, se ve el borde del círculo al pintarlo
         let diametro = andDiameter + 10;
         
@@ -50,7 +50,7 @@ class RangeViewController: UIViewController {
         removeProxCircle()
         
         // Creamos la posición del nuevo círculo
-        let circleView = ProxRangeView(frame: CGRectMake (((self.view.frame.width - diametro) / 2), withHeight, diametro, diametro))
+        let circleView = ProxRangeView(frame: CGRect (x: ((self.view.frame.width - diametro) / 2), y: withHeight, width: diametro, height: diametro))
         
         // Le ponemos una tag para eliminar la vista después
         circleView.tag = TAG_NUMBER_CIRCLES
@@ -65,15 +65,15 @@ class RangeViewController: UIViewController {
         }
     }
     
-    func CLProximity2String(proximity: CLProximity) -> String {
+    func CLProximity2String(_ proximity: CLProximity) -> String {
         switch proximity {
-        case .Far:
+        case .far:
             return "Far";
-        case .Immediate:
-            return "Inmediate";
-        case .Near:
+        case .immediate:
+            return "Immediate";
+        case .near:
             return "Near";
-        case .Unknown:
+        case .unknown:
             return "Unknown";
         }
     }
@@ -83,9 +83,9 @@ class RangeViewController: UIViewController {
 // MARK: - Location Manager Delegate
 extension RangeViewController: CLLocationManagerDelegate {
     
-    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         //println(beacons);
-        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
+        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
         
         if (knownBeacons.count > 0) {
             let totalHeight = self.view.frame.size.height - self.tabBarController!.tabBar.frame.size.height;
@@ -96,7 +96,7 @@ extension RangeViewController: CLLocationManagerDelegate {
                 navBarHeight = 20
             }
             let closestBeacon = knownBeacons[0] ;
-            let distance = -(closestBeacon.accuracy.distanceTo(0.0));
+            let distance = -(closestBeacon.accuracy.distance(to: 0.0));
             let proximity = closestBeacon.proximity;
             
             let newHeight = CGFloat(model.meters2Point(
@@ -112,7 +112,7 @@ extension RangeViewController: CLLocationManagerDelegate {
             self.view.backgroundColor = self.colors[closestBeacon.proximity]
         } else {
             removeProxCircle()
-            self.proximityLabel.text = "Proximity: " + CLProximity2String(CLProximity.Unknown);
+            self.proximityLabel.text = "Proximity: " + CLProximity2String(CLProximity.unknown);
             self.distanceLabel.text = "Distance: Unknown"
         }
     }

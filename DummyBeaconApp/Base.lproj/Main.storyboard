@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +52,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="qAv-4O-UzL" secondAttribute="trailing" id="nI7-6H-aoL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="HIO-m4-LFu"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="featured" id="HIO-m4-LFu"/>
                     <connections>
                         <outlet property="distanceLabel" destination="qAv-4O-UzL" id="e8G-Qg-mSu"/>
                         <outlet property="proximityLabel" destination="EKY-ro-iGW" id="LXw-az-vKy"/>
@@ -84,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="3119" y="296"/>
         </scene>
-        <!--View Controller-->
+        <!--Dummy App-->
         <scene sceneID="Fdx-aR-gjo">
             <objects>
                 <viewController id="qOj-dQ-YRU" sceneMemberID="viewController">
@@ -96,45 +97,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8o-7v-0d3">
-                                <rect key="frame" x="152" y="196" width="70" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-br-xp8">
+                                <rect key="frame" x="16" y="384" width="343" height="192"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="Ob5-KC-ju2"/>
+                                    <constraint firstAttribute="width" secondItem="pQI-br-xp8" secondAttribute="height" multiplier="343:192" id="EA7-28-OZI"/>
                                 </constraints>
-                                <state key="normal" title="Ranging">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="omb-Qv-my9" kind="show" id="HvQ-Xt-a64"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-br-xp8">
-                                <rect key="frame" x="134" y="451" width="107" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="107" id="lib-G5-ZIF"/>
-                                </constraints>
-                                <state key="normal" title="Configuration">
+                                <state key="normal" image="configureBtn">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="6t5-nW-aAn" kind="show" id="b2B-BQ-4Yh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8o-7v-0d3">
+                                <rect key="frame" x="16" y="128" width="343" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X8o-7v-0d3" secondAttribute="height" multiplier="343:192" id="V00-oK-iyE"/>
+                                </constraints>
+                                <state key="normal" image="rangingBtn">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="omb-Qv-my9" kind="show" id="HvQ-Xt-a64"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pQI-br-xp8" firstAttribute="centerX" secondItem="X8o-7v-0d3" secondAttribute="centerX" constant="0.5" id="Cad-gd-K5Y"/>
-                            <constraint firstAttribute="centerX" secondItem="pQI-br-xp8" secondAttribute="centerX" id="WW5-Ir-lrb"/>
-                            <constraint firstItem="X8o-7v-0d3" firstAttribute="top" secondItem="BLc-bj-gYA" secondAttribute="bottom" constant="132" id="X7G-hK-DXz"/>
-                            <constraint firstItem="pQI-br-xp8" firstAttribute="height" secondItem="X8o-7v-0d3" secondAttribute="height" id="f8v-Kn-89i"/>
-                            <constraint firstItem="OJ8-Zw-SZt" firstAttribute="top" secondItem="pQI-br-xp8" secondAttribute="bottom" constant="186" id="kYV-gt-j0n"/>
+                            <constraint firstItem="pQI-br-xp8" firstAttribute="centerX" secondItem="hYt-Se-lny" secondAttribute="centerX" id="F0y-5j-KYX"/>
+                            <constraint firstItem="pQI-br-xp8" firstAttribute="trailing" secondItem="hYt-Se-lny" secondAttribute="trailingMargin" id="GUr-at-zba"/>
+                            <constraint firstItem="X8o-7v-0d3" firstAttribute="top" secondItem="BLc-bj-gYA" secondAttribute="bottom" constant="64" id="Pr6-1X-SIR"/>
+                            <constraint firstItem="OJ8-Zw-SZt" firstAttribute="top" secondItem="pQI-br-xp8" secondAttribute="bottom" constant="91" id="Tcy-NI-Vfw"/>
+                            <constraint firstItem="pQI-br-xp8" firstAttribute="leading" secondItem="hYt-Se-lny" secondAttribute="leadingMargin" id="i29-Xm-ngY"/>
+                            <constraint firstItem="X8o-7v-0d3" firstAttribute="trailing" secondItem="hYt-Se-lny" secondAttribute="trailingMargin" id="ixg-R1-BkF"/>
+                            <constraint firstItem="X8o-7v-0d3" firstAttribute="centerX" secondItem="hYt-Se-lny" secondAttribute="centerX" id="qBz-dq-Naf"/>
+                            <constraint firstItem="X8o-7v-0d3" firstAttribute="leading" secondItem="hYt-Se-lny" secondAttribute="leadingMargin" id="xbp-jn-6Yf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Wdm-Pg-zBf"/>
+                    <navigationItem key="navigationItem" title="Dummy App" id="Wdm-Pg-zBf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7d-2L-b4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501" y="344"/>
+            <point key="canvasLocation" x="1500" y="343.17841079460271"/>
         </scene>
         <!--Configuration-->
         <scene sceneID="7nD-zq-DwH">
@@ -403,5 +407,7 @@
         <image name="3Normal" width="29" height="25"/>
         <image name="3Push" width="29" height="25"/>
         <image name="beaconButton" width="60" height="60"/>
+        <image name="configureBtn" width="238" height="163"/>
+        <image name="rangingBtn" width="238" height="163"/>
     </resources>
 </document>

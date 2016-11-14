@@ -23,10 +23,10 @@ class ProxRangeView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Get the Graphics Context
-        let context = UIGraphicsGetCurrentContext();
+        let context = UIGraphicsGetCurrentContext()
         
         // Set the circle outerline-width
-        context?.setLineWidth(1.0);
+        context?.setLineWidth(1.0)
         
         // Set the circle colors
         color.setStroke()
@@ -36,10 +36,10 @@ class ProxRangeView: UIView {
         let center = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         context?.addArc(center: center, radius: (frame.size.width - 10) / 2, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
         // Fill circle with color
-        context?.drawPath(using: CGPathDrawingMode.fill);
+        context?.drawPath(using: CGPathDrawingMode.fill)
         
         // Draw
-        context?.strokePath();
+        context?.strokePath()
     }
     
     var color = UIColor.blue {

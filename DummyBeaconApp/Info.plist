@@ -35,6 +35,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Necesito permisos</string>
+	<string>This information will be used to locate beacons near you.</string>
 </dict>
 </plist>

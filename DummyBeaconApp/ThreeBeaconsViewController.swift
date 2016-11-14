@@ -15,7 +15,7 @@ class ThreeBeaconsViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let model = Model()
-    let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "0018B4CC-1937-4981-B893-9D7191B22E35")!, identifier: "BeaconA");
+    let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "0018B4CC-1937-4981-B893-9D7191B22E35")!, identifier: "BeaconA")
     
     var x1:CGFloat = 0
     var y1:CGFloat = 0
@@ -28,10 +28,10 @@ class ThreeBeaconsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let totalHeight = self.view.frame.size.height - self.tabBarController!.tabBar.frame.size.height;
+        let totalHeight = self.view.frame.size.height - self.tabBarController!.tabBar.frame.size.height
         var navBarHeight:CGFloat = 0
         if let navController = self.navigationController {
-            navBarHeight = navController.navigationBar.frame.size.height + 20; // 20 es del status bar
+            navBarHeight = navController.navigationBar.frame.size.height + 20 // 20 es del status bar
         } else {
             navBarHeight = 20
         }
@@ -47,12 +47,12 @@ class ThreeBeaconsViewController: UIViewController {
         addProxCircle(x2, Y: y2, diameter: 40, color: UIColor.black, andTag: 2)
         addProxCircle(x3, Y: y3, diameter: 40, color: UIColor.black, andTag: 3)
         
-        locationManager.delegate = self;
+        locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse) {
-            locationManager.requestWhenInUseAuthorization();
+            locationManager.requestWhenInUseAuthorization()
         }
         
-        locationManager.startRangingBeacons(in: region);
+        locationManager.startRangingBeacons(in: region)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +62,7 @@ class ThreeBeaconsViewController: UIViewController {
     
     func addProxCircle (_ withX: CGFloat, Y: CGFloat, diameter: CGFloat, color: UIColor, andTag: Int) {
         // Sumamos 10 al diametro, que luego se restará en la vista, porque si no, se ve el borde del círculo al pintarlo
-        let diametro = diameter + 10;
+        let diametro = diameter + 10
         
         // Eliminamos el anterior círculo si es que había
         removeProxCircle(andTag)
@@ -91,7 +91,7 @@ class ThreeBeaconsViewController: UIViewController {
 extension ThreeBeaconsViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        //println(beacons);
+        //println(beacons)
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
         
         if (knownBeacons.count >= 3) {
@@ -151,11 +151,8 @@ extension ThreeBeaconsViewController: CLLocationManagerDelegate {
         let Z = dB2 - dC2 - bX2 - bY2 + cX2 + cY2
     
         let x = (W*(C.y-B.y) - Z*(B.y-A.y)) / (2 * ((B.x-A.x)*(C.y-B.y) - (C.x-B.x)*(B.y-A.y)))
-        var y = (W - 2*x*(B.x-A.x)) / (2*(B.y-A.y))
-        //y2 is a second measure of y to mitigate errors
-        //let y2 = (Z - 2*x*(C.x-B.x)) / (2*(C.y-B.y))
-    
-        //y = (y + y2) / 2
+        let y = (W - 2*x*(B.x-A.x)) / (2*(B.y-A.y))
+        
         return CGPoint.init(x: x, y: y)
     }
 }

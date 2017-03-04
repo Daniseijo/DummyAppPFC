@@ -17,18 +17,25 @@ class RangeViewController: UIViewController {
 
     let model = Model()
     let colors = [
-        CLProximity.immediate: UIColor(red: 84/255, green: 77/255, blue: 160/255, alpha: 1),
-        CLProximity.near: UIColor(red: 142/255, green: 212/255, blue: 220/255, alpha: 1),
+        CLProximity.immediate: UIColor(red: 246/255, green: 177/255, blue: 147/255, alpha: 1),
+        CLProximity.near: UIColor(red: 246/255, green: 226/255, blue: 147/255, alpha: 1),
         CLProximity.far: UIColor(red: 162/255, green: 213/255, blue: 181/255, alpha: 1)]
     let TAG_NUMBER_CIRCLES = 53456
     
     @IBOutlet weak var proximityLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
+    var seeDistance: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.seeDistance = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        self.view.addGestureRecognizer(tap)
+        self.view.isUserInteractionEnabled = true
+        
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization()
@@ -43,6 +50,10 @@ class RangeViewController: UIViewController {
     }
     
     // MARK: - Additional Methods
+    
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        self.seeDistance = !self.seeDistance
+    }
     
     func addProxCircle (_ withHeight: CGFloat, andDiameter: CGFloat) {
         // Sumamos 10 al diametro, que luego se restará en la vista, porque si no, se ve el borde del círculo al pintarlo
@@ -109,13 +120,22 @@ extension RangeViewController: CLLocationManagerDelegate {
             
             addProxCircle(newHeight, andDiameter: 20)
             self.proximityLabel.text = "Proximity: " + CLProximity2String(proximity)
-            self.distanceLabel.text = "Distance: " + distance.description
+            if self.seeDistance {
+                self.distanceLabel.text = "Distance: " + distance.description
+            } else {
+                self.distanceLabel.text = "RSSI: " + String(closestBeacon.rssi)
+            }
+            
             
             self.view.backgroundColor = self.colors[closestBeacon.proximity]
         } else {
             removeProxCircle()
             self.proximityLabel.text = "Proximity: " + CLProximity2String(CLProximity.unknown)
-            self.distanceLabel.text = "Distance: Unknown"
+            if self.seeDistance {
+                self.distanceLabel.text = "Distance: Unknown"
+            } else {
+                self.distanceLabel.text = "RSSI: Unknown"
+            }
         }
     }
 }
